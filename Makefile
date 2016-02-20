@@ -48,8 +48,8 @@ help:
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
 
 .PHONY: lri
-lri:
-	scp -rv _build/html/ virmaux@pl-ssh.lri.fr:~/WWW/doc/
+lri: html
+	rsync -avz _build/html/ virmaux@pl-ssh.lri.fr:~/WWW/doc
 
 .PHONY: clean
 clean:

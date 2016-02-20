@@ -1,7 +1,7 @@
 Countries
 =========
 
-All countries in the world. In **bold** all the onnes I visited.
+All countries in the world. In **bold** all the ones I visited.
 
 * Afghanistan
 * Albania
