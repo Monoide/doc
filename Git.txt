@@ -1,0 +1,15 @@
+.. highlight:: bash
+
+Git
+***
+
+Initialiser un dépôt local puis ajouter les fichiers::
+
+    git init
+    git add truc.cpp
+
+Ajout d'un serveur distant puis push::
+
+    git remote add origin git@gitlab.lri.fr:virmaux/test.git
+    git commit -m "message"
+    git push --set-upstream origin master

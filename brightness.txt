@@ -1,0 +1,11 @@
+Brightness
+**********
+
+The level of brightness is defined in
+`/sys/class/backlight/intel_backlight/brightness`
+
+It except an integer value between `0` and 851 (as defined in
+`/sys/class/backlight/intel_backlight/max_brightness`::
+
+    echo 400 > /sys/class/backlight/intel_backlight/brightness
+

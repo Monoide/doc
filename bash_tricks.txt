@@ -1,0 +1,23 @@
+Bash tricks
+***********
+
+A collection of Bash tricks that proved themselves to be useful
+
+With `find`
+===========
+
+Afraid of `xargs`?
+------------------
+
+You want to do something with all file satisfying some regex... and don't
+remeber how to use xargs ? Not a problem::
+
+    find . -name stuff | while read f; do echo "$f"; done
+
+Delete old stuff
+----------------
+
+Delete every file that is older than 7 days::
+
+    find . -atime +7 -delete
+

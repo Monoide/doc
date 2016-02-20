@@ -1,0 +1,9 @@
+vimrc
+=====
+
+.. literalinclude:: vimrc
+    :caption: vimrc
+    :name: vimrc
+    :language: vim
+    :linenos:
+

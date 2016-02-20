@@ -1,0 +1,13 @@
+Pacman
+******
+
+.. literalinclude:: pacman.conf
+   :caption: pacman.conf
+   :name: pacman.conf
+   :language: pacmanconf
+
+.. literalinclude:: makepkg.conf
+   :caption: makepkg.conf
+   :name: makepkg.conf
+   :language: pkgconfig
+

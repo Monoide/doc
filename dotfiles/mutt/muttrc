@@ -1,0 +1,81 @@
+set editor=/usr/bin/vim
+
+set my_name="Aladin Virmaux"
+set my_user='aladin.virmaux'
+set realname="Aladin Virmaux"
+
+set mail_check=120
+set mailcap_path = ~/.mutt/mailcap
+
+set mbox_type=Maildir
+
+set header_cache="~/.mutt/cache/headers"
+set message_cachedir="~/.mutt/cache/bodies"
+set certificate_file="~/.mutt/certificates"
+
+set locale="us_US"
+
+unset imap_passive
+set imap_keepalive=200
+set mail_check = 60
+# set imap_check_subscribed
+
+set implicit_autoview
+auto_view text/html
+
+# General look
+set date_format="%d/%b/%Y %I:%M"
+set index_format="%S %d %-20.20F %s"
+
+set pager_index_lines = 15
+
+# Écrire des mails...
+set send_charset="utf-8"
+
+set alias_file="~/.mutt/aliases"
+set sort_alias= alias
+set reverse_alias=yes
+source $alias_file
+
+set signature=""
+
+# Sidebar
+set sidebar_visible = yes
+set sidebar_width=25
+set sidebar_delim='|'
+set sidebar_sort=no
+
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
+
+
+# Ctrl-n, Ctrl-p to select next, previous folder.
+# # Ctrl-o to open selected folder.
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+set sort='reverse-threads'
+set sort_aux='last-date-received'
+
+source ~/.mutt/colors
+
+# GMail
+mailboxes "+-------- GMail-----------"
+source "~/.mutt/account.gmail"
+folder-hook *@gmail* 'source ~/.mutt/account.gmail'
+
+# LRI
+mailboxes "+-------- LRI ----------"
+source "~/.mutt/account.lri"
+folder-hook *@lri* 'source ~/.mutt/account.lri'
+
+## U-PSUD
+mailboxes "+-------- U-PSUD -------""
+source "~/.mutt/account.upsud"
+folder-hook *@psud* 'source ~/.mutt/account.upsud'
+
+# folder-hook *gmail.com 'source ~/.mutt/account.gmail'
+# Default
+source ~/.mutt/account.gmail'

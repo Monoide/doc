@@ -1,0 +1,122 @@
+.. highlight:: tex
+
+LaTeX
+*****
+
+Compiler deux versions d'un même .tex: sujet + correction
+-----------------------------------------------------------
+
+Avec une variable booléenne. C'est la méthode employée pour le cours Info111::
+
+    % Gestion de la correction
+    \usepackage{etoolbox}
+    \usepackage{environ}
+
+    \newbool{correction}
+    \ifx\withcorrection\undefined
+    \boolfalse{correction} %Version non corrigée
+    \else
+    \booltrue{correction} %Version corrigée
+    \fi
+
+    \newtheoremstyle{correction}%
+    {3pt}    %Space above
+    {3pt}    %Space below
+    {\color{red}}       %Body font
+    {}       %Indent amount
+    {}       %Theorem head font
+    {}       %Punctuation after theorem head
+    {0.25em} %Space after theorem head
+    {}       %Theorem head spec
+    \theoremstyle{correction}
+    \ifbool{correction}
+    {\newtheorem*{correction}{Correction}}
+    {\NewEnviron{correction}{}{}}
+
+Et dans le Makefile, il faut maintenir les noms des fichiers ainsi que les
+repertoires. On utilse donc \ pour ne faire qu'une seule et unique ligne.
+
+.. code-block:: Makefile
+
+    %-correction.pdf: %.tex
+        file=`basename '$<'`; \
+        cd `dirname '$<'`; \
+        $(PDFLATEX) -jobname `basename $@ .pdf` "\def\withcorrection{}\input{$$file}"; \
+        $(PDFLATEX) -jobname `basename $@ .pdf` "\def\withcorrection{}\input{$$file}";
+
+    %.pdf: %.tex
+        cd `dirname '$<'`; $(PDFLATEX) `basename '$<'`; $(PDFLATEX) `basename '$<'`
+
+Avec une option de classe (plus propre car pas besoin d'importer les
+packages etoolbox et environ), technique introduite pour info121::
+
+    \DeclareOption{correction}{\@correctiontrue}
+    \newif\if@correction
+    \@correctionfalse
+
+    \ProcessOptions
+
+    \if@correction
+      \newenvironment{solution}%
+      {\par\noindent\begin{small}\slshape\textbf{Correction :}}%
+      {\end{small}\par\smallskip}
+    \else
+      \RequirePackage{verbatim}
+      \let\solution\comment
+      \let\endsolution\endcomment
+    \fi
+
+Pour le Makefile
+
+.. code-block:: Makefile
+
+    %-correction.pdf: %.tex
+        file=`basename '$<'`; \
+        cd `dirname '$<'`; \
+        $(PDFLATEX) -jobname `basename $@ .pdf` "\PassOptionsToClass{correction}{style}\input{$$file}"; \
+        $(PDFLATEX) -jobname `basename $@ .pdf` "\PassOptionsToClass{correction}{style}\input{$$file}";
+
+    %.pdf: %.tex
+        cd `dirname '$<'`; $(PDFLATEX) `basename '$<'`; $(PDFLATEX) `basename '$<'`
+
+Pénalités
+---------
+
+Éviter que les formules soient coupées d'une ligne à l'autre::
+
+    \relpenalty=10000
+    \binoppenalty=10000
+
+
+Backward search using Okular + Vim
+----------------------------------
+
+The aim is to have a backward search between the `pdf` document produced by
+`pdflatex` (or `xelatex`) between Okular and Vim: clicking withing the
+pdf viewer open the source at the good line an eventually new vim buffer.
+
+.. code-block:: bash
+    :caption: .latexmkrc
+    :name: .latexmkrc
+
+    $pdflatex="xelatex -halt-on-error -src-specials -synctex=1 %O %S";
+
+Vim needs to be opened in server mode. Depending on the distribution, it may
+need to be recompiled with the flag `+clientserver`. This flag is present in
+`huge`.
+
+.. code-block:: bash
+
+    ./configure --with-features=huge
+    make ; make install
+
+Choose a name and launch vim as a server
+
+.. code-block:: bash
+
+    vim --servername tex
+
+In Okular, Settings > Editor
+
+    | Editor: Custom Text Editor
+    | Command: `vim --servername tex --remote +%l %f`

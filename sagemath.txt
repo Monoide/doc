@@ -1,0 +1,13 @@
+Sagemath
+********
+
+Dessine la hiérarchie des classes::
+
+    sage: M = Monoids().Finite().example()
+    sage: class_graph(M.__class__)
+    Digraph on 21 vertices
+
+Utiliser sage avec LaTeX::
+
+    \usepackage{sagetex}
+

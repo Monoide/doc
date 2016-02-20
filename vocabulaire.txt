@@ -1,0 +1,20 @@
+Vocabulaire
+***********
+
+Source:
+    * https://www.wiktionary.org/
+
+Français
+========
+
+Sérendipité
+    de l’anglais « serendipity », signifie « capacité à faire, par hasard, lors
+    d’une recherche, une découverte inattendue et à en saisir la portée »
+
+English
+=======
+
+mellifluous
+    Sweet, smooth and musical; pleasant to hear (generally used of a
+    person's voice, tone or writing style).
+

@@ -1,0 +1,37 @@
+.. highlight:: bash
+
+Archlinux
+*********
+
+Linux
+=====
+
+Documentation on Linux:
+    * http://www.die.net/
+
+pacman
+======
+- Upgrade system::
+
+    pacman -Syu
+
+- Remove package::
+
+    pacman -Rsn package
+
+- Remove orphans package::
+
+    pacman -Rns $(pacman -Qtdq)
+
+- Which package holds a file::
+
+    pacman -Qo file
+
+Time
+====
+
+Put computer on time::
+
+    ntpd -qg
+    hwclock --systohc
+
