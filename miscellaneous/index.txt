@@ -4,5 +4,7 @@ Miscellaneous
 Contents:
 
 .. toctree::
+
+   countries
    vocabulaire
 

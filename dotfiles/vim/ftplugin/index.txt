@@ -1,0 +1,9 @@
+ftplugin
+========
+
+Contents:
+
+.. toctree::
+
+    texvim
+

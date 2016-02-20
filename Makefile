@@ -47,6 +47,10 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
 
+.PHONY: lri
+lri:
+	scp -rv _build/html/ virmaux@pl-ssh.lri.fr:~/WWW/doc/
+
 .PHONY: clean
 clean:
 	rm -rf $(BUILDDIR)/*

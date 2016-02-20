@@ -1,0 +1,9 @@
+tex.vim
+=======
+
+.. literalinclude:: tex.vim
+    :caption: texvim
+    :name: texvim
+    :language: vim
+    :linenos:
+

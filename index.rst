@@ -12,7 +12,7 @@ Contents:
 
 .. toctree::
    :titlesonly:
-   :maxdepth: 3
+   :maxdepth: 4
 
    archlinux
    bash_tricks
