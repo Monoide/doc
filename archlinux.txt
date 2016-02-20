@@ -30,8 +30,26 @@ pacman
 Time
 ====
 
-Put computer on time::
+Put computer on time (needs root)::
 
     ntpd -qg
     hwclock --systohc
+
+Brightness
+==========
+
+The level of brightness is defined in
+``/sys/class/backlight/intel_backlight/brightness``
+
+It excepts an integer value between `0` and 851 (as defined in
+``/sys/class/backlight/intel_backlight/max_brightness``::
+
+    echo 400 > /sys/class/backlight/intel_backlight/brightness
+
+One cane use xbacklight, see for example the i3 configuration file
+:ref:`i3config`.
+
+================ =======================================================
+xbacklight (1)   |   - adjust backlight brightness using RandR extension
+================ =======================================================
 
