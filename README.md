@@ -4,7 +4,7 @@
 
     make html
 
-## Including many dotfiles
+### dotfiles
 
 - i3
 - ranger
