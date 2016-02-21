@@ -2,8 +2,6 @@
 
 ## Using Sphinx
 
-::
-
     make html
 
 ## Including many dotfiles
