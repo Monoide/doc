@@ -1,0 +1,14 @@
+scripts
+=======
+
+Raise or run
+------------
+
+Bash scripts that whether give the focus on a window, or launch the program.
+
+.. literalinclude:: scripts/raise-or-run-firefox.sh
+   :caption: firefox
+   :name: firefox
+   :language: bash
+   :linenos:
+

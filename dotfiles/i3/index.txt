@@ -1,0 +1,12 @@
+i3
+**
+
+Contents:
+
+.. toctree::
+   :titlesonly:
+
+   config
+   i3status
+   scripts
+

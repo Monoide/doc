@@ -120,3 +120,4 @@ In Okular, Settings > Editor
 
     | Editor: Custom Text Editor
     | Command: `vim --servername tex --remote +%l %f`
+

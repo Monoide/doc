@@ -1,0 +1,16 @@
+# PATH
+export PATH=$PATH:/home/aladin/sage/:/home/aladin/bin/:/opt/bin
+
+# Variables
+export EDITOR="vim"
+export MAKE="make -j4"
+
+# GnuPGP
+GPG_TTY=`tty`
+export GPG_TTY
+
+# Git prompt
+# export GIT_PROMPT_EXECUTABLE="haskell"
+
+# Sage
+export SAGE_KEEP_BUILT_SPKGS='yes'

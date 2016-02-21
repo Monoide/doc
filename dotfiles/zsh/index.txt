@@ -1,0 +1,15 @@
+zsh
+***
+
+.. literalinclude:: zshrc
+   :language: bash
+   :caption: zshrc
+   :name: zshrc
+   :linenos:
+
+.. literalinclude:: zshenv
+   :language: bash
+   :caption: zshenv
+   :name: zshenv
+   :linenos:
+

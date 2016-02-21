@@ -17,6 +17,7 @@ Contents:
    archlinux
    bash_tricks
    curiosities
+   dot
    Git
    latex
    sagemath

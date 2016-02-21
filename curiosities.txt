@@ -1,0 +1,28 @@
+Curiosities
+***********
+
+Sleep sort
+==========
+
+Someone proposed on 4chan the following sorting algorithm. At first glance, it
+looks like it is a really efficient sort, and as long as we don't have any
+number to sort above the frenquency of the clock, it could be sorted in 1s.
+
+.. code-block:: bash
+
+   #!/bin/bash
+   function f() {
+       sleep "$1"
+       echo "$1"
+   }
+
+   while [ -n "$1" ]
+   do
+       f "$1" &
+       shift
+   done
+   wait
+
+In fact, the sorting is given to the scheduler and it cannot be better than an
+insertion sort.
+

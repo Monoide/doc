@@ -1,0 +1,45 @@
+autoload -Uz compinit
+autoload -Uz bashcompinit
+compinit
+bashcompinit
+# End of lines added by compinstall
+
+# Prompt
+# export PS1="%n@%m %1c %% "
+source .zsh/zsh-git-prompt/zshrc.sh
+PROMPT='%n@%m $(git_super_status) %1c %% '
+
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Emacs mode in command line
+bindkey -e
+
+# Couleurs
+autoload -U colors && colors
+eval $(dircolors ~/.dircolors)
+
+alias v='vim'
+alias vi='vim'
+alias ll='ls -lh --time-style=long-iso'
+alias ls='ls --color=auto'
+alias vdir='vdir --color=auto'
+alias dir='dir --color=auto'
+alias o='xdg-open'
+alias pd=pushd
+# Grep is colored, not case sensitive and gives the number of the line
+alias grep='grep -inH --color'
+
+alias thunderbird='icedove'
+alias xterm='termite'
+
+# Correction automatique
+# setopt correctall
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+# zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+#
+# Termite ctrl + shit + t
+source /etc/profile.d/vte.sh

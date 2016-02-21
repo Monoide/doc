@@ -1,0 +1,13 @@
+Configuration files
+===================
+
+Contents:
+
+.. toctree::
+   :titlesonly:
+
+   i3/index
+   pacman/index
+   vim/index
+   xorg/index
+   zsh/index

@@ -1,0 +1,118 @@
+.. highlight:: bash
+
+dot
+***
+
+Documentation of *dot*: http://www.graphviz.org/Documentation/dotguide.pdf
+
+Basics
+======
+
+*dot* draws directly graphs as a hierarchies. The common extension is *.dot*.
+
+The following simple example is the poset of divisibility for integers between
+1 and 10
+
+.. code-block:: abnf
+
+    Digraph {
+		1 -> 2 [color=red];
+		1 -> 3 [color=red];
+		1 -> 5 [color=red];
+		1 -> 7 [color=red];
+		2 -> 4;
+		2 -> 6;
+		3 -> 6;
+		3 -> 9 [color=blue];
+		4 -> 8;
+		2 -> 10;
+		5 -> 10;
+	}
+
+It then needs to be compiled in any format, for example to get an output in
+bitmap::
+
+    dot -Tps file.dot -o file.png
+
+.. image:: img/example_dot.png
+   :alt: dot
+
+The supported output format are:
+
+.. _command-line-options:
+
+-Tps
+    (PostScript)
+-Tsvg, -Tsvgz
+    (Structured Vector Graphics)
+-Tfig
+    (XFIG graphics)
+-Tpng, -Tgif
+    (bitmap graphics)
+-Timap
+    (imagemap files for httpd servers for each node or  edge that has a non‐null "href" attribute)
+-Tcmapx
+    (client‐side imagemap for use in html and xhtml)
+
+Common options you want for Digraphs::
+
+    ranksep=equally
+    rankdir=BT
+    size="3 3"
+
+ranksep
+    sets the minimum separation between ranks
+rankdir=LR|RL|BT
+    requests a left‐to‐right, right‐to‐left, or bottom‐to‐top, drawing
+size
+    specifies the maximum bounding box of drawing in inches
+
+It is also possible to force some nodes to have the same rank::
+
+    {rank = same; node1; node2;}
+
+To force the ordering of nodes of same rank, let's say left to right, one can
+use the invisible edge trick::
+
+    {rank = same;
+    edge[style=invis]
+    node1 -> node2 -> node3 -> node4;
+    rankdir = LR;}
+
+To draw a box around some node, use subgraph. The name of the subgraph *must*
+begin with *cluster*:
+
+.. code-block:: abnf
+
+   subgraph cluster1342 {
+       1342;
+       3142;
+       3412;
+   }
+
+
+To TikZ
+=======
+
+To get TikZ out of a *.dot* file, we use *dot2tex*.
+
+Documentation of *dot2tex*: https://dot2tex.readthedocs.org/en/latest/
+
+My typical usage is::
+
+    dot2tex --prog dot --format tikz -t math --autosize -s --figonly file.dot > file.tex
+
+
+--prog
+    Choice of the program, here dot
+--format tikz
+    Output in TikZ
+-t math
+    Output in math mode
+--autosize
+    Preprocess the graph and run Graphviz on the output
+-s
+    Draw edges using straight lines
+--figonly
+    Output the grpah without preamble
+

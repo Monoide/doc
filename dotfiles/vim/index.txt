@@ -1,0 +1,11 @@
+Vim
+***
+
+Contents:
+
+.. toctree::
+
+   vimrc
+   ftplugin/index
+   bundle/index
+

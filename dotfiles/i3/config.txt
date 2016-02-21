@@ -1,0 +1,11 @@
+config
+******
+
+.. _i3config:
+
+.. literalinclude:: config
+   :caption: config
+   :name: config
+   :language: bash
+   :linenos:
+
