@@ -1,10 +1,12 @@
+.. highlight:: bash
+
 Bash tricks
 ***********
 
 A collection of Bash tricks that proved themselves to be useful
 
-With `find`
-===========
+With ``find``
+=============
 
 Afraid of `xargs`?
 ------------------
@@ -20,4 +22,15 @@ Delete old stuff
 Delete every file that is older than 7 days::
 
     find . -atime +7 -delete
+
+With ``sed``
+============
+
+Change accents for TeX::
+
+    sed -i s/é/\\\'e/g file.tex
+    sed -i s/è/\\\`e/g file.tex
+    sed -i s/ê/\\\\^e/g file.tex
+    sed -i s/à/\\\`a/g file.tex
+    sed -i s/ç/\c\ c/g file.tex
 

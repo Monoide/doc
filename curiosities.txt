@@ -5,8 +5,9 @@ Sleep sort
 ==========
 
 Someone proposed on 4chan the following sorting algorithm. At first glance, it
-looks like it is a really efficient sort, and as long as we don't have any
-number to sort above the frenquency of the clock, it could be sorted in 1s.
+looks like it is a really efficient sort, as we can gain a constant equal to
+the clock frequency, allowing to sort a list of any size with elements lower
+than a few hundred thousands, in less than one second.
 
 .. code-block:: bash
 
@@ -23,6 +24,6 @@ number to sort above the frenquency of the clock, it could be sorted in 1s.
    done
    wait
 
-In fact, the sorting is given to the scheduler and it cannot be better than an
+In fact, the work is given to the scheduler and it cannot be better than an
 insertion sort.
 
