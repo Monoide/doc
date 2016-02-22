@@ -14,3 +14,9 @@ Ajout d'un serveur distant puis push::
     git commit -m "message"
     git push --set-upstream origin master
 
+
+Revert an uncommited single file. You can avoid ``--`` if the file does not
+share the name of a branch::
+
+    git checkout -- file
+
