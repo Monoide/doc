@@ -15,7 +15,7 @@ Contents:
    :maxdepth: 4
 
    archlinux
-   bash_tricks
+   bash
    curiosities
    dot
    Git

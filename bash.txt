@@ -1,12 +1,20 @@
 .. highlight:: bash
 
-Bash tricks
-***********
+Bash
+****
 
 A collection of Bash tricks that proved themselves to be useful
 
 With ``find``
 =============
+
+find (1)
+    search for files in a directory hierarchy
+find (1p)
+    find files
+find (n)
+    search for classes and objects
+
 
 Afraid of `xargs`?
 ------------------
@@ -26,6 +34,9 @@ Delete every file that is older than 7 days::
 With ``sed``
 ============
 
+sed (1)
+    stream editor for filtering and transforming text
+
 Change accents for TeX::
 
     sed -i s/é/\\\'e/g file.tex
@@ -33,4 +44,25 @@ Change accents for TeX::
     sed -i s/ê/\\\\^e/g file.tex
     sed -i s/à/\\\`a/g file.tex
     sed -i s/ç/\c\ c/g file.tex
+
+With ``rsync``
+==============
+
+rsync (1)
+    a fast, versatile, remote (and local) file-copying tool
+rsyncd.conf (5)
+    configuration file for rsync in daemon mode
+
+.. _command-line-options:
+
+-a, --archive
+    archive mode
+-v, --verbose
+    verbose
+-z, --compress
+    compress file data during the transfer
+
+My typical usage::
+
+    rsync -avz FROM/ TO
 
