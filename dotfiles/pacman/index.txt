@@ -4,10 +4,12 @@ Pacman
 .. literalinclude:: pacman.conf
    :caption: pacman.conf
    :name: pacman.conf
+   :linenos:
    :language: pacmanconf
 
 .. literalinclude:: makepkg.conf
    :caption: makepkg.conf
    :name: makepkg.conf
+   :linenos:
    :language: pkgconfig
 

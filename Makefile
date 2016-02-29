@@ -49,7 +49,7 @@ help:
 
 .PHONY: lri
 lri: html
-	rsync -avz _build/html/ virmaux@pl-ssh.lri.fr:~/WWW/doc
+	rsync -avz _build/html/ virmaux@acces.lri.fr:~/WWW/doc
 
 .PHONY: clean
 clean:

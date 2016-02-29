@@ -33,7 +33,7 @@ It then needs to be compiled, for example to get an output in bitmap::
 
     dot -Tps file.dot -o file.png
 
-.. image:: img/example_dot.png
+.. image:: images/example_dot.png
    :alt: dot
 
 The supported output format are:
@@ -93,7 +93,7 @@ We can also choose direction and the style of arrowhead::
     3 -> 9 [color=blue, arrowhead=odot];
     4 -> 8 [arrowsize=0.6, style=dashed];
 
-.. image:: img/example_cluster_dot.png
+.. image:: images/example_cluster_dot.png
 
 Pour une bonne documentation des options, voir
 http://www.graphviz.org/doc/info/attrs.html

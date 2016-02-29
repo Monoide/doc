@@ -27,6 +27,12 @@ pacman
 
     pacman -Qo file
 
+- List server by speed
+``mirrorlist.pacnew`` is a file continaing servers URL. First we uncomment the
+server names that we want to rank; then::
+
+    rankmirrors -n 6 mirrorlist.pacnew > mirrorlist
+
 Time
 ====
 

@@ -66,3 +66,22 @@ My typical usage::
 
     rsync -avz FROM/ TO
 
+With ``tar``
+============
+
+Uncompress::
+
+     tar -xvf file.tar
+     tar -xzvf file.tar.gz
+     tar -xjvf file.tar.bz2
+     tar -xYvf file.tar.lzma
+
+Archive::
+
+     tar -cvf file.tar folder1 [folder2...]
+
+Compression::
+
+     tar -czvf archive.tar.gz folder
+     tar -cjvf archive.tar.bz2 folder
+
