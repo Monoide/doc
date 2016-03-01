@@ -3,10 +3,10 @@
 Archlinux
 *********
 
-Linux
-=====
+GNU/Linux
+=========
 
-Documentation on Linux:
+Documentation on GNU/Linux:
     * http://www.die.net/
 
 pacman
@@ -26,6 +26,10 @@ pacman
 - Which package holds a file::
 
     pacman -Qo file
+
+- Package installed locally (include those one from AUR)::
+
+    pacman -Qm
 
 - List server by speed
 ``mirrorlist.pacnew`` is a file continaing servers URL. First we uncomment the

@@ -6,7 +6,11 @@
 Welcome to Aladin's documentation!
 ==================================
 
-Personnal documentation, with lots of randomness
+This is a personal documentation, stuff I do not want to forget.  It is
+extraordinarily empty. I aim to fill it incrementally when I have time or when I
+encounter something that I find well suited enough to fit in here.
+
+It is sometimes in English, sometimes in French, with probably many mistakes.
 
 Contents:
 
