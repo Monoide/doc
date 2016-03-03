@@ -1,3 +1,5 @@
+.. highlight:: bash
+
 Sagemath
 ********
 
@@ -10,4 +12,27 @@ Dessine la hiérarchie des classes::
 Utiliser sage avec LaTeX::
 
     \usepackage{sagetex}
+
+
+CPLEX
+=====
+
+CPLEX is a linear programming solver owned by IBM.
+
+Installation in sage
+--------------------
+
+Source:
+http://doc.sagemath.org/html/en/thematic_tutorials/linear_programming.html
+
+First install CPLEX, by default the installation is done in `/opt`.
+
+Link libraires for sage::
+
+    cd ~
+    cd sage/local/lib
+    ln -s /opt/ibm/ILOG/CPLEX_Studio1262/cplex/lib/x86-64_linux/static_pic/libcplex.a .
+    cd ../include
+    ln -s /opt/ibm/ILOG/CPLEX_Studio1262/cplex/include/ilcplex/cplex.h .
+    ln -s /opt/ibm/ILOG/CPLEX_Studio1262/cplex/include/ilcplex/cpxconst.h .
 
