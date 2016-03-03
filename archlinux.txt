@@ -3,10 +3,10 @@
 Archlinux
 *********
 
-Linux
-=====
+GNU/Linux
+=========
 
-Documentation on Linux:
+Documentation on GNU/Linux:
     * http://www.die.net/
 
 pacman
@@ -27,6 +27,16 @@ pacman
 
     pacman -Qo file
 
+- Package installed locally (include those one from AUR)::
+
+    pacman -Qm
+
+- List server by speed
+``mirrorlist.pacnew`` is a file continaing servers URL. First we uncomment the
+server names that we want to rank; then::
+
+    rankmirrors -n 6 mirrorlist.pacnew > mirrorlist
+
 Time
 ====
 
@@ -41,7 +51,7 @@ Brightness
 The level of brightness is defined in
 ``/sys/class/backlight/intel_backlight/brightness``
 
-It excepts an integer value between `0` and 851 (as defined in
+It excepts an integer value between 0 and 851 (as defined in
 ``/sys/class/backlight/intel_backlight/max_brightness``::
 
     echo 400 > /sys/class/backlight/intel_backlight/brightness

@@ -1,0 +1,87 @@
+.. highlight:: bash
+
+Bash
+****
+
+A collection of Bash tricks that proved themselves to be useful
+
+With ``find``
+=============
+
+find (1)
+    search for files in a directory hierarchy
+find (1p)
+    find files
+find (n)
+    search for classes and objects
+
+
+Afraid of `xargs`?
+------------------
+
+You want to do something with all file satisfying some regex... and don't
+remeber how to use xargs ? Not a problem::
+
+    find . -name stuff | while read f; do echo "$f"; done
+
+Delete old stuff
+----------------
+
+Delete every file that is older than 7 days::
+
+    find . -atime +7 -delete
+
+With ``sed``
+============
+
+sed (1)
+    stream editor for filtering and transforming text
+
+Change accents for TeX::
+
+    sed -i s/é/\\\'e/g file.tex
+    sed -i s/è/\\\`e/g file.tex
+    sed -i s/ê/\\\\^e/g file.tex
+    sed -i s/à/\\\`a/g file.tex
+    sed -i s/ç/\c\ c/g file.tex
+
+With ``rsync``
+==============
+
+rsync (1)
+    a fast, versatile, remote (and local) file-copying tool
+rsyncd.conf (5)
+    configuration file for rsync in daemon mode
+
+.. _command-line-options:
+
+-a, --archive
+    archive mode
+-v, --verbose
+    verbose
+-z, --compress
+    compress file data during the transfer
+
+My typical usage::
+
+    rsync -avz FROM/ TO
+
+With ``tar``
+============
+
+Uncompress::
+
+     tar -xvf file.tar
+     tar -xzvf file.tar.gz
+     tar -xjvf file.tar.bz2
+     tar -xYvf file.tar.lzma
+
+Archive::
+
+     tar -cvf file.tar folder1 [folder2...]
+
+Compression::
+
+     tar -czvf archive.tar.gz folder
+     tar -cjvf archive.tar.bz2 folder
+

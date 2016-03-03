@@ -29,12 +29,11 @@ The following simple example is the poset of divisibility for integers between
 		5 -> 10;
 	}
 
-It then needs to be compiled in any format, for example to get an output in
-bitmap::
+It then needs to be compiled, for example to get an output in bitmap::
 
     dot -Tps file.dot -o file.png
 
-.. image:: img/example_dot.png
+.. image:: images/example_dot.png
    :alt: dot
 
 The supported output format are:
@@ -80,15 +79,24 @@ use the invisible edge trick::
     rankdir = LR;}
 
 To draw a box around some node, use subgraph. The name of the subgraph *must*
-begin with *cluster*:
+begin with *cluster*.
 
 .. code-block:: abnf
 
-   subgraph cluster1342 {
-       1342;
-       3142;
-       3412;
-   }
+	subgraph cluster_even {
+		2; 4; 6; 8; 10;
+	}
+
+We can also choose direction and the style of arrowhead::
+
+    1 -> 7 [color=red, dir=both];
+    3 -> 9 [color=blue, arrowhead=odot];
+    4 -> 8 [arrowsize=0.6, style=dashed];
+
+.. image:: images/example_cluster_dot.png
+
+Pour une bonne documentation des options, voir
+http://www.graphviz.org/doc/info/attrs.html
 
 
 To TikZ

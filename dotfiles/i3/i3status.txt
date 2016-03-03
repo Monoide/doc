@@ -4,5 +4,6 @@ i3status
 .. literalinclude:: i3status.conf
    :language: bash
    :caption: i3status.conf
+   :linenos:
    :name: i3status.conf
 
