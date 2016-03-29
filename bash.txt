@@ -69,6 +69,10 @@ My typical usage::
 With ``tar``
 ============
 
+tar (1)
+    an archiving utility
+
+
 Uncompress::
 
      tar -xvf file.tar
@@ -84,4 +88,29 @@ Compression::
 
      tar -czvf archive.tar.gz folder
      tar -cjvf archive.tar.bz2 folder
+
+
+With ``fuser``
+==============
+
+fuser (1)
+    identify processes using files or sockets
+fuser (1p)
+    list process IDs of all processes that have one or more files open
+
+.. _command-line-options:
+
+-a, --all
+    Show  all  files specified on the command line.  By default, only
+    files that are accessed by at least one process are shown.
+-k, --kill
+    Kill processes accessing the file.
+-m NAME
+    NAME  specifies  a  file on a mounted file system or a block device that is
+    mounted.
+
+
+Kill all process using ``file``::
+
+    fuser -k file
 

@@ -11,6 +11,10 @@ Documentation on GNU/Linux:
 
 pacman
 ======
+
+pacman (8)
+    package manager utility
+
 - Upgrade system::
 
     pacman -Syu
@@ -59,7 +63,6 @@ It excepts an integer value between 0 and 851 (as defined in
 One cane use xbacklight, see for example the i3 configuration file
 :ref:`i3config`.
 
-================ =======================================================
-xbacklight (1)   |   - adjust backlight brightness using RandR extension
-================ =======================================================
+xbacklight (1)
+    adjust backlight brightness using RandR extension
 

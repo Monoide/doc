@@ -6,7 +6,7 @@ bashcompinit
 
 # Prompt
 # export PS1="%n@%m %1c %% "
-source .zsh/zsh-git-prompt/zshrc.sh
+source ~/.zsh/zsh-git-prompt/zshrc.sh
 PROMPT='%n@%m $(git_super_status) %1c %% '
 
 source /usr/share/doc/pkgfile/command-not-found.zsh
