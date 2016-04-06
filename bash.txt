@@ -85,3 +85,13 @@ Compression::
      tar -czvf archive.tar.gz folder
      tar -cjvf archive.tar.bz2 folder
 
+With ``wget``
+=============
+
+wget (1)
+    - The non-interactive network downloader.
+
+Get a folder from a protected server with username and password::
+
+    wget -r --user=user --password=password https://your.website.folder/
+
