@@ -20,3 +20,7 @@ share the name of a branch::
 
     git checkout -- file
 
+Revert a file from a previous commit::
+
+    git checkout commitNumber /path/to/file
+
