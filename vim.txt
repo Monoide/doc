@@ -1,0 +1,9 @@
+.. highlight:: vim
+
+Vim
+***
+
+Replace all non-SCII characters with spaces::
+
+    :%s/[^\x00-\x7F]/ /g
+

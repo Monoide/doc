@@ -25,6 +25,7 @@ Contents:
    Git
    latex
    sagemath
+   vim
    miscellaneous/index
    dotfiles/index
 
