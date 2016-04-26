@@ -148,11 +148,18 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position bottom
+        tray_padding 2
+        separator_symbol " | "
+
+        font pango:DejaVu Sans Mono 10, Awesome 10
 }
 
 # No borders
 for_window [class="^Chromium$"] border none
 for_window [class="^Firefox$"] border none
+for_window [class="^Thunderbird$"] border none
+for_window [class="^Okular$"] border none
 
 # Floating for some applications
 for_window [class="Pavucontrol"] floating enable
@@ -161,6 +168,9 @@ for_window [title="Hangouts"] floating enable
 #
 #Personnal configuration
 #
+# Use dunst
+exec --no-startup-id dunst
+
 # Coming back where I came from
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
@@ -190,10 +200,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +8%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -9%
-# bindsym XF86AudioMicMute exec pactl set-sink-input-mute 0 toggle
+bindsym XF86AudioMicMute exec pactl set-sink-input-mute 1 toggle
 #
 # pavucontrol
 bindsym $mod+p exec pavucontrol
 
 # Screenshot
 bindsym Print exec scrot -e -s
+
+# Multi screeen
+bindsym $mod+Shift+m move workspace to output right
+bindsym $mod+Shift+n move workspace to output left
