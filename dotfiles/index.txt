@@ -11,3 +11,4 @@ Contents:
    vim/index
    xorg/index
    zsh/index
+   zathura/index

@@ -1,0 +1,10 @@
+zathura
+*******
+
+Contents:
+
+.. toctree::
+   :titlesonly:
+
+   zathurarc
+

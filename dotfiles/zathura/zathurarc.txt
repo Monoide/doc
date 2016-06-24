@@ -1,0 +1,9 @@
+zathura
+*******
+
+.. literalinclude:: zathurarc
+   :language: bash
+   :caption: zathurarc
+   :linenos:
+   :name: zathurarc
+
