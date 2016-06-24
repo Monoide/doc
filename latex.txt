@@ -121,3 +121,23 @@ In Okular, Settings > Editor
     | Editor: Custom Text Editor
     | Command: `vim --servername tex --remote +%l %f`
 
+Backward and forward search using Zathura + Vim + LaTeX-BoX
+-----------------------------------------------------------
+
+.. code-block:: vim
+    :caption: tex.vim
+    :name: tex.vim
+
+    let g:LatexBox_viewer='zathura --fork -x "vim --servername TEX --remote +\%{line} \%{input}"'
+
+.. code-block:: vim
+    :caption: tex.vim
+    :name: tex.vim
+
+    function! SyncTexForward()
+        let s:syncfile = LatexBox_GetOutputFile()
+        let execstr = "!zathura --synctex-forward=".line(".").':'.col('.').':% '.s:syncfile
+        exec execstr
+    endfunction
+    nnoremap <LocalLeader>f :call SyncTexForward()<CR><CR>
+
